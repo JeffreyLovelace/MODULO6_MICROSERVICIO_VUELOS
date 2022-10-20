@@ -17,10 +17,7 @@ jobs:
             dotnet-version: 5.0.x
         - name: Restore dependencies
           run: dotnet restore
-        - name: dotnet build and publish
-          run: 
-            dotnet build --configuration Release
-            dotnet publish -c Release -o '${{env.AZURE_WEBAPP_PACKAGE_PATH}}/myapp'
+
         # checkout the repo
         - name: 'Checkout GitHub Action'
           uses: actions/checkout@main

@@ -15,11 +15,11 @@ jobs:
           uses: actions/setup-dotnet@v2        
           with:
             dotnet-version: 5.0.x
-        - name: Install dependencies
-          run: dolnet restore
-        - name: dolnet build and publish
+        - name: Restore dependencies
+          run: dotnet restore
+        - name: dotnet build and publish
           run: 
-            dolnet build --configuration Release
+            dotnet build --configuration Release
             dotnet publish -c Release -o '${{env.AZURE_WEBAPP_PACKAGE_PATH}}/myapp'
         # checkout the repo
         - name: 'Checkout GitHub Action'

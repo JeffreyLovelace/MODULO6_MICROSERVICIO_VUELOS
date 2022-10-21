@@ -5,7 +5,7 @@ RUN rpm -Uvh https://packages.microsoft.com/config/centos/7/packages-microsoft-p
     && yum install -y aspnetcore-runtime-5.0
 
 # Ensure we listen on any IP Address 
-ENV DOTNET_URLS=http://myresourcegroup27.westus.azurecontainer.io/
+ENV DOTNET_URLS=http://+:5000
 
 WORKDIR /app
 # ... remainder of dockerfile as before
